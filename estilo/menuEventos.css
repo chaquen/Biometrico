@@ -1,5 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html {
+    width: 100%;
+    height: 100%;
+}
+
 body {
     font-size: 100%;
+    width: 100%;
+    height: 100%;
 }
 a {
     text-decoration: none;
@@ -9,6 +20,21 @@ ul ul {
     margin: 0;
     padding: 0;
     list-style: none;
+}
+.mascara {
+    clear: both;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: none;
+    background-color: rgba(1,1,1,0.8);
+}
+.salir {
+    color: white;
+    float: right;
+    cursor: pointer;
+    margin-right: 300px;
+    margin-top: 50px;
 }
 #wrapper {  
     width: 500px;
@@ -179,4 +205,7 @@ ul ul {
 .menu > li > ul li:hover a span,
 .menu > li > ul li:hover a:before {
     color: #32373D;
+}
+span {
+    cursor: pointer;
 }

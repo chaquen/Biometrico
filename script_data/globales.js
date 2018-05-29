@@ -10,7 +10,7 @@ var globales={
 	//_URL:"https://",
 	_usuario:false,
 	_cerrar_sesion:true,
-	_recordarme:false,
+	_recordarme:false
 
 };
 

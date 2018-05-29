@@ -1,4 +1,4 @@
-function iniciar_eventos(){
+function iniciar__menu_eventos(){
 	/*agregarEvento("btnContactar","click",function(){
 			var datos = $("#formContacto").serializarFormulario();
 			datos.origen="info@jedidiassalud.com";
@@ -25,6 +25,7 @@ function dibujar_lista_eventos(rs){
 	var lista=document.getElementById("liEventos");
 	lista.innerHTML="";
 	var tam=Object.keys(rs).length;
+        console.log(tam);
   	var reg=false;
 	for(var e in rs){
 		console.log(rs[e]);
@@ -46,19 +47,42 @@ function dibujar_lista_eventos(rs){
 			inA.innerHTML=rs[e].atachments;
 			inA.href="http://pdpmagdalenacentro.org/assets/private/atachments/events/"+rs[e].atachments;
 			var ilSpan=document.createElement("span");
-			ilSpan.innerHTML="DOWNLOAD";
+			ilSpan.innerHTML="DESCARGAR";
+			inA.appendChild(ilSpan);
+			ilLi.appendChild(inA);
+			innerList.appendChild(ilLi);
+                        var ilLi=document.createElement("li");
+			var inA=document.createElement("a");
+                        //inA.setAttribute("target","_blank");
+                        inA.href="participantes.html";
+                        inA.innerHTML="Registrar participante";
+			var ilSpan=document.createElement("span");
+			ilSpan.innerHTML="IR A";
 			inA.appendChild(ilSpan);
 			ilLi.appendChild(inA);
 			innerList.appendChild(ilLi);
 			reg=true;
+                        
+                        
 		}else{
-			reg=false;
+                        var innerList=document.createElement("ul");	
+			var ilLi=document.createElement("li");
+			var inA=document.createElement("a");
+                        //inA.setAttribute("target","_blank");
+                        inA.href="participantes.html";
+                        inA.innerHTML="Registrar participante";
+			var ilSpan=document.createElement("span");
+			ilSpan.innerHTML="IR A";
+			inA.appendChild(ilSpan);
+			ilLi.appendChild(inA);
+			innerList.appendChild(ilLi);
+			reg=true;
 		}
 		
 		
 
-
-		if(e==tam){
+                console.log(e);
+		/*if(e==tam-1){
 			
 			var ilLi=document.createElement("li");
 			var inA=document.createElement("a");
@@ -66,7 +90,7 @@ function dibujar_lista_eventos(rs){
 			ilLi.appendChild(inA);
 			innerList.appendChild(ilLi);
 			reg=true;
-		}
+		}*/
 
 		if(reg){
 			liOne.appendChild(innerList);	
@@ -136,4 +160,4 @@ menuElements.insertAdjacentHTML('afterBegin','<button type="button" id="menutogg
 
 
 
-agregarEventoLoad(iniciar_eventos);
+agregarEventoLoad(iniciar__menu_eventos);

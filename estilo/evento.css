@@ -30,6 +30,19 @@ ul li:first-child {
 }
 .contenedor {
     width: 100%;
+    margin-top: 20px;
+    display:none;
+}
+.salir {
+    float: right;
+    padding: 8px 10px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    font-family: arial;
+    font-size: 14px;
+    border-radius: 100%;
 }
 .contenedor form {
     width: 80%;
@@ -129,4 +142,19 @@ select {
     border-radius: 5px;
     margin-left: 2%;
     margin-top: 5px;
+}
+table {
+    width: 95%;
+    padding: 20px;
+    border: 1px solid black;
+    margin: auto;
+}
+table td {
+    width: 10%;
+}
+table td:nth-child(2){
+    width: 40%;
+}
+table td:nth-child(3){
+    width: 40%;
 }

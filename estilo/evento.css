@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+html {
+    width: 100%;
+    height: 100%;
+}
+body {
+    width: 100%;
+    height: 100%;
+}
+ul {
+    padding: 10px;
+    display: table;
+}
+li {
+    margin-top: 10px;
+}
+ul li:first-child {
+    width: 100%;
+}
+.nombreEven {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #D6A5BB;
+}
+.contenedor {
+    width: 100%;
+}
+.contenedor form {
+    width: 80%;
+    display: table;
+    padding: 20px;
+    margin: auto;
+    background-color: #B2BDDE;
+}
+.contenedor h1 {
+    text-align: center;
+    
+}
+.identificacion li {
+    float: left;
+    width: 33%;
+}
+.identificacion li:nth-child(5){
+    width: 50%;
+}
+.identificacion li:nth-child(6){
+    width: 50%;
+}
+.identificacion li:nth-child(7){
+    width: 50%;
+}
+.identificacion li:nth-child(8){
+    width: 50%;
+}
+
+.datosPersonales {
+    clear: both;
+}
+.datosPersonales li {
+    float: left;
+    width: 16.6%;
+}
+.ubicacion {
+    clear: both;
+    width: 97%;
+}
+.ubicacion li {
+    float: left;
+    width: 25%;
+}
+.escolaridad {
+    clear: both;
+    width: 98.5%;
+}
+.escolaridad li {
+    float: left;
+    width: 20%;
+}
+.escolaridad li:nth-child(3){
+    width: 80%;
+}
+.datosP {
+    clear: both;
+    width: 90%;
+}
+.datosP li {
+    float: left;
+    width: 40%    
+}
+.botones {
+    clear: both;
+    width: 100%;
+    text-align: center;
+}
+input[type=text] {
+    width: 95%;
+    height: 25px;
+    border-radius: 5px;
+    margin-left: 2%;
+    margin-top: 5px;
+}
+input[type=date] {
+    width: 95%;
+    height: 25px;
+    border-radius: 5px;
+    margin-left: 2%;
+    margin-top: 5px;
+}
+input[type=number] {
+    width: 95%;
+    height: 25px;
+    border-radius: 5px;
+    margin-left: 2%;
+    margin-top: 5px;
+}
+input[type=button]{
+    padding: 8px 20px;
+    cursor: pointer;
+}
+select {
+    width: 95%;
+    height: 29px;
+    border-radius: 5px;
+    margin-left: 2%;
+    margin-top: 5px;
+}

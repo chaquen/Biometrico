@@ -26,7 +26,8 @@ and open the template in the editor.
     <body>
         <!--Datos del evento-->
         <div>
-            <h1>Nombre del Evento</h1>
+            <h1 id="h1NombreDelEvento">Nombre del Evento</h1>
+             <input type="hidden" id="id_evento" name="id_evento">
             <input type="button" value="Registrar Poblador">
             <input type="button" value="Registrar Trabajador">
         </div>
@@ -35,92 +36,93 @@ and open the template in the editor.
         <div>
             <form id="formPobladores">
                 <h1>POBLADORES</h1>
-                <ul>
+               
+                <ul>                    
                     <li><h3>Identificación</h3></li>
                     <li>
                         <h4>Tipo de documento</h4>
-                        <select name="tipo_doc">
-                            <option>Cedula Ciudadania</option>
-                            <option>Cedula extranjera</option>
-                            <option>Passaporte</option>
+                        <select name="tipo_doc" required>
+                            <option value="CC">Cedula Ciudadania</option>
+                            <option value="CE">Cedula extranjera</option>
+                            <option value="PS">Passaporte</option>
                         </select>
                     </li>
                     <li>
                         <h4>Numero Documento</h4>
-                        <input type="text" name="documento" placeholder="Documento">
+                        <input type="text" name="documento" placeholder="Documento" required>
                     </li>
                     <li>
                         <h4>Lugar de Expedidión</h4>
-                        <input type="text" name="lugar_exp" placeholder="Lugar expedición">
+                        <input type="text" name="lugar_exp" placeholder="Lugar expedición" required>
                     </li>
                     <li>
                         <h4>Primer Apellido</h4>
-                        <input type="text" name="pri_apellido" placeholder="Primer Apellido">
+                        <input type="text" name="pri_apellido" placeholder="Primer Apellido" required>
                     </li>
                     <li>
                         <h4>Segundo Apellido</h4>
-                        <input type="text" name="seg_apellido" placeholder="Segundo Apellido">
+                        <input type="text" name="seg_apellido" placeholder="Segundo Apellido" required>
                     </li>
                     <li>
                         <h4>Primer Nombre</h4>
-                        <input type="text" name="pri_nombre" placeholder="Primer Nombre">
+                        <input type="text" name="pri_nombre" placeholder="Primer Nombre" required>
                     </li>
                     <li>
                         <h4>Segundo Nombre</h4>
-                        <input type="text" name="seg_nombre" placeholder="Segundo Nombre">
+                        <input type="text" name="seg_nombre" placeholder="Segundo Nombre" required>
                     </li>
                 </ul>
                 <ul>
                     <li><h3>Datos Personales</h3></li>
                     <li>
                         <h4>Lugar de Nacimiento</h4>
-                        <input type="text" name="ciud_nacimiento" placeholder="Ciudad">
-                        <input type="text" name="dep_nacimiento" placeholder="Departamento">
+                        <input type="text" name="ciud_nacimiento" placeholder="Ciudad" required>
+                        <input type="text" name="dep_nacimiento" placeholder="Departamento" required>
                     </li>
                     <li>
                         <h4>Fecha de Nacimiento</h4>
-                        <input name="fecha_nac" type="date">
+                        <input name="fecha_nac" type="date" required>
                     </li>
                     <li>
                         <h4>Genero</h4>
-                        <select name="genero">
+                        <select name="genero" required>
                             <option>Hombre</option>
                             <option>Mujer</option>
                         </select>
                     </li>
                     <li>
                         <h4>Capacidades Diferentes</h4>
-                        <input type="text" name="cap_dife" placeholder="Capacidades">
+                        <input type="text" name="cap_dife" placeholder="Capacidades" required>
                     </li>
                     <li>
                         <h4>Etnia</h4>
-                        <input type="text" name="etnia" placeholder="etnia">
+                        <input type="text" name="etnia" placeholder="etnia" required>
                     </li>
                 </ul>
                 <ul>
                     <li><h3>Ubicación</h3></li>
                     <li>
                         <h4>Zona</h4>
-                        <input type="text" name="zona" placeholder="Zona">
+                        <input type="text" name="zona" placeholder="Zona" required>
                     </li>
                     <li>
                         <h4>Municipio</h4>
-                        <input type="text" name="municipio" placeholder="Municipio">
+                        <input type="text" name="municipio" placeholder="Municipio" required>
                     </li>
                     <li>
                         <h4>Celular</h4>
-                        <input type="number" name="celular" placeholder="Celular">
+                        <input type="number" name="celular" placeholder="Celular" required>
                     </li>
                     <li>
                         <h4>Correo Electronico</h4>
-                        <input type="text" name="email" placeholder="E-mail">
+                        <input type="text" name="email" placeholder="E-mail" required>
                     </li>
                 </ul>
                 <ul>
                     <li><h3>Escolaridad</h3></li>
                     <li>
                         <h4>Nivel alcanzado</h4>
-                        <select name="escolaridad">
+                        <select name="escolaridad" required>
                             <option>Primaria</option>
                             <option>Bachillerato</option>
                             <option>Tecnico</option>
@@ -130,18 +132,18 @@ and open the template in the editor.
                     </li>
                     <li>
                         <h4>Titulo obtenido</h4>
-                        <input name="titulo_obt" type="text" placeholder="Nombre Titulo">
+                        <input name="titulo_obt" type="text" placeholder="Nombre Titulo" required>
                     </li>
                 </ul>
                 <ul>
                     <li><h3>Datos Procesos PDP</h3></li>
                     <li>
                         <h4>Organizaciòn</h4>
-                        <input name="organizacion" type="text" placeholder="Organizaciòn">
+                        <input name="organizacion" type="text" placeholder="Organizaciòn" required>
                     </li>
                     <li>
                         <h4>Proceso</h4>
-                        <input name="proceso" type="text" placeholder="Proceso">
+                        <input name="proceso" type="text" placeholder="Proceso" required>
                     </li>
                 </ul>
                 <ul>
@@ -170,50 +172,50 @@ and open the template in the editor.
                     </li>
                     <li>
                         <h4>Numero Documento</h4>
-                        <input type="text" name="documento" placeholder="Documento">
+                        <input type="text" name="documento" placeholder="Documento" required>
                     </li>
                     <li>
                         <h4>Lugar de Expedidión</h4>
-                        <input type="text" name="lugar_exp" placeholder="Lugar expedición">
+                        <input type="text" name="lugar_exp" placeholder="Lugar expedición"  required>
                     </li>
                     <li>
                         <h4>Primer Apellido</h4>
-                        <input type="text" name="pri_apellido" placeholder="Primer Apellido">
+                        <input type="text" name="pri_apellido" placeholder="Primer Apellido"  required>
                     </li>
                     <li>
                         <h4>Segundo Apellido</h4>
-                        <input type="text" name="seg_apellido" placeholder="Segundo Apellido">
+                        <input type="text" name="seg_apellido" placeholder="Segundo Apellido"  required>
                     </li>
                     <li>
                         <h4>Primer Nombre</h4>
-                        <input type="text" name="pri_nombre" placeholder="Primer Nombre">
+                        <input type="text" name="pri_nombre" placeholder="Primer Nombre"  required>
                     </li>
                     <li>
                         <h4>Segundo Nombre</h4>
-                        <input type="text" name="seg_nombre" placeholder="Segundo Nombre">
+                        <input type="text" name="seg_nombre" placeholder="Segundo Nombre"  required>
                     </li>
                 </ul>
                 <ul>
                     <li><h3>Datos Personales</h3></li>
                     <li>
                         <h4>Lugar de Nacimiento</h4>
-                        <input type="text" name="ciud_nacimiento" placeholder="Ciudad">
-                        <input type="text" name="dep_nacimiento" placeholder="Departamento">
+                        <input type="text" name="ciud_nacimiento" placeholder="Ciudad" required>
+                        <input type="text" name="dep_nacimiento" placeholder="Departamento" required>
                     </li>
                     <li>
                         <h4>Fecha de Nacimiento</h4>
-                        <input name="fecha_nac" type="date">
+                        <input name="fecha_nac" type="date" required>
                     </li>
                     <li>
                         <h4>Genero</h4>
-                        <select name="genero">
+                        <select name="genero" required>
                             <option>Hombre</option>
                             <option>Mujer</option>
                         </select>
                     </li>
                     <li>
                         <h4>Tipo de Sangre</h4>
-                        <select name="tipo_sangre">
+                        <select name="tipo_sangre" required>
                             <option>A</option>
                             <option>A</option>
                             <option>AB</option>
@@ -222,67 +224,67 @@ and open the template in the editor.
                     </li>
                     <li>
                         <h4>RH</h4>
-                        <select name="rh">
+                        <select name="rh" required>
                             <option>+</option>
                             <option>-</option>
                         </select>
                     </li>
                     <li>
                         <h4>Etnia</h4>
-                        <input type="text" name="etnia" placeholder="etnia">
+                        <input type="text" name="etnia" placeholder="etnia" required>
                     </li>
                 </ul>
                 <ul>
                     <li><h3>Ubicación</h3></li>
                     <li>
                         <h4>Ciudad</h4>
-                        <input type="text" name="ciudad_resi" placeholder="Ciudad">
+                        <input type="text" name="ciudad_resi" placeholder="Ciudad" required>
                     </li>
                     <li>
                         <h4>Dirección</h4>
-                        <input type="text" name="dire_vivienda" placeholder="Dirección">
+                        <input type="text" name="dire_vivienda" placeholder="Dirección" required>
                     </li>
                     <li>
                         <h4>Barrio</h4>
-                        <input type="text" name="barrio" placeholder="Barrio"> 
+                        <input type="text" name="barrio" placeholder="Barrio" required> 
                     </li>
                     <li>
                         <h4>Telefono Fijo</h4>
-                        <input type="number" name="tel_fijo" placeholder="Telefono Fijo">
+                        <input type="number" name="tel_fijo" placeholder="Telefono Fijo" required>
                     </li>
                     <li>
                         <h4>Celular</h4>
-                        <input type="number" name="celular" placeholder="Celular">
+                        <input type="number" name="celular" placeholder="Celular"  required>
                     </li>
                     <li>
                         <h4>Correo Electronico</h4>
-                        <input type="text" name="email" placeholder="E-mail">
+                        <input type="text" name="email" placeholder="E-mail"  required>
                     </li>
                 </ul>
                 <ul>
                     <li><h3>Datos de sguridad social en salud</h3></li>
                     <li>
                         <h4>Regimen</h4>
-                        <select name="regimen">
+                        <select name="regimen"  required>
                             <option>Contributivo</option>
                             <option>Subsidiado</option>
                         </select>
                     </li>
                     <li>
                         <h4>EPS/ARS</h4>
-                        <input type="text" name="eps_arl" placeholder="Nombre EPS/ARS">
+                        <input type="text" name="eps_arl" placeholder="Nombre EPS/ARS" required>
                     </li>
                     <li>
                         <h4>IPS</h4>
-                        <input type="text" name="ips" placeholder="Nombre IPS">
+                        <input type="text" name="ips" placeholder="Nombre IPS" required>
                     </li>
                     <li>
                         <h4>Nivel de SISBEN</h4>
-                        <input type="number" name="sisben" placeholder="0">
+                        <input type="number" name="sisben" placeholder="0" required>
                     </li>
                     <li>
                         <h4>Puntaje</h4>
-                        <input type="number" name="puntaje" placeholder="0">
+                        <input type="number" name="puntaje" placeholder="0" required>
                     </li>
                 </ul>
                 <h2>Nivel de Estudios</h2>

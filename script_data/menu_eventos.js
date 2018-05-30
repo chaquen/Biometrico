@@ -16,9 +16,15 @@ function iniciar__menu_eventos(){
 	//console.log(globales);
 	registrarDato("mis_eventos",{usuario:globales._usuario},function(rs){
 		dibujar_lista_eventos(rs.datos);
+		agregar_local_storage("lsEventos",rs.datos);
 		menu();
 		menu_2();
+
 	},"");
+
+	consultarDatos("eventos",{},function(){
+		
+	});
 }
 
 function dibujar_lista_eventos(rs){
@@ -54,7 +60,7 @@ function dibujar_lista_eventos(rs){
                         var ilLi=document.createElement("li");
 			var inA=document.createElement("a");
                         //inA.setAttribute("target","_blank");
-                        inA.href="participantes.html";
+                        inA.href="participantes.html?id="+rs[e].id;
                         inA.innerHTML="Registrar participante";
 			var ilSpan=document.createElement("span");
 			ilSpan.innerHTML="IR A";
@@ -65,11 +71,11 @@ function dibujar_lista_eventos(rs){
                         
                         
 		}else{
-                        var innerList=document.createElement("ul");	
+            var innerList=document.createElement("ul");	
 			var ilLi=document.createElement("li");
 			var inA=document.createElement("a");
                         //inA.setAttribute("target","_blank");
-                        inA.href="participantes.html";
+                         inA.href="participantes.html?id="+rs[e].id;
                         inA.innerHTML="Registrar participante";
 			var ilSpan=document.createElement("span");
 			ilSpan.innerHTML="IR A";

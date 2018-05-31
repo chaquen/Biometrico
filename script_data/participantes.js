@@ -16,7 +16,10 @@ function iniciar_evento(){
    
     console.log(globales._eventos[pos]);
 
-
+    consultarDatos("data/colombia.json",{},function(rs){
+        console.log(rs);
+        
+    });
     agregarEvento("btnRegistrarParticiapantes","click",function(){
         var datos = $("#formPobladores").serializarFormulario();
         
@@ -44,7 +47,7 @@ function iniciar_evento(){
         
         console.log(datos);
         if(false!=datos){
-                registrarDato("trabajadores",datos,function(rs){
+                registrarDato("usuarios",datos,function(rs){
                         mostrarMensaje(rs);
                 },"formTrabajadores");
         }else{

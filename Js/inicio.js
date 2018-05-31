@@ -4,6 +4,13 @@ $(document).ready(function(){
     });
     
     $('.salir').click(function(){
-        $('.mascara').fadeOut('slow');
+        $('.mascara, .contenedor').fadeOut('slow');
+    });
+    
+    $('#btn_RegitrarP').click(function(){
+        $('#contenedorP').fadeIn('slow');
+    });
+    $('#btn_RegitrarT').click(function(){
+        $('#contenedorT').fadeIn('slow');
     });
 });

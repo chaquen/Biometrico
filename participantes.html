@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -9,8 +9,13 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="estilo/evento.css" rel="stylesheet" type="text/css"/>
+        
         <!--script edgar-->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+            <script src="Js/inicio.js" type="text/javascript"></script>
+            
             <script src="script_data/funciones/utilidades.js" type="text/javascript"></script>
             <script src="script_data/funciones/formatos.js" type="text/javascript"></script>
             <script src="script_data/funciones/peticiones_ajax.js" type="text/javascript"></script>
@@ -25,19 +30,25 @@ and open the template in the editor.
     </head>
     <body>
         <!--Datos del evento-->
-        <div>
+
+        <div class="nombreEven">
             <h1 id="h1NombreDelEvento">Nombre del Evento</h1>
-             <input type="hidden" id="id_evento" name="id_evento">
-            <input type="button" value="Registrar Poblador">
-            <input type="button" value="Registrar Trabajador">
+            <input type="hidden" id="id_evento" name="id_evento">
+            <input type="button" value="Registrar Poblador" id="btn_RegitrarP">
+            
+            <input type="button" value="volver al menu">
+
         </div>
         
         <!--Division del Formulario de Pobladores-->
-        <div>
+        <div class="contenedor" id="contenedorP">
+            
             <form id="formPobladores">
+                <h6 class="salir">X<h6>
                 <h1>POBLADORES</h1>
-               
-                <ul>                    
+
+                <ul class="identificacion">
+
                     <li><h3>Identificación</h3></li>
                     <li>
                         <h4>Tipo de documento</h4>
@@ -72,12 +83,15 @@ and open the template in the editor.
                         <input type="text" name="seg_nombre" placeholder="Segundo Nombre" required>
                     </li>
                 </ul>
-                <ul>
+                <ul class="datosPersonales">
                     <li><h3>Datos Personales</h3></li>
                     <li>
                         <h4>Lugar de Nacimiento</h4>
+
                         <input type="text" name="ciud_nacimiento" placeholder="Ciudad" required>
                         <input type="text" name="dep_nacimiento" placeholder="Departamento" required>
+
+
                     </li>
                     <li>
                         <h4>Fecha de Nacimiento</h4>
@@ -99,7 +113,7 @@ and open the template in the editor.
                         <input type="text" name="etnia" placeholder="etnia" required>
                     </li>
                 </ul>
-                <ul>
+                <ul class="ubicacion">
                     <li><h3>Ubicación</h3></li>
                     <li>
                         <h4>Zona</h4>
@@ -118,7 +132,7 @@ and open the template in the editor.
                         <input type="text" name="email" placeholder="E-mail" required>
                     </li>
                 </ul>
-                <ul>
+                <ul class="escolaridad">
                     <li><h3>Escolaridad</h3></li>
                     <li>
                         <h4>Nivel alcanzado</h4>
@@ -135,7 +149,7 @@ and open the template in the editor.
                         <input name="titulo_obt" type="text" placeholder="Nombre Titulo" required>
                     </li>
                 </ul>
-                <ul>
+                <ul class="datosP">
                     <li><h3>Datos Procesos PDP</h3></li>
                     <li>
                         <h4>Organizaciòn</h4>
@@ -146,7 +160,7 @@ and open the template in the editor.
                         <input name="proceso" type="text" placeholder="Proceso" required>
                     </li>
                 </ul>
-                <ul>
+                <ul class="botones">
                     <li>
                         <input id="btnRegistrarParticiapantes" type="button" value="Aceptar">
                         <input id="btnCancelarParticiapantes" type="button" value="Cancelar">
@@ -157,10 +171,11 @@ and open the template in the editor.
         <!--Fin formulario de pobladores-->
 
         <!--Formulario Trabajadores-->
-        <div>
+        <!--<div class="contenedor" id="contenedorT">
             <form id="formTrabajadores">
+                <h6 class="salir">X</h6>
                 <h1>TRABAJADORES</h1>
-                <ul>
+                <ul class="identificacion">
                     <li><h3>Identificación</h3></li>
                     <li>
                         <h4>Tipo de documento</h4>
@@ -195,12 +210,14 @@ and open the template in the editor.
                         <input type="text" name="seg_nombre" placeholder="Segundo Nombre"  required>
                     </li>
                 </ul>
-                <ul>
+                <ul class="datosPersonales">
                     <li><h3>Datos Personales</h3></li>
                     <li>
                         <h4>Lugar de Nacimiento</h4>
+
                         <input type="text" name="ciud_nacimiento" placeholder="Ciudad" required>
                         <input type="text" name="dep_nacimiento" placeholder="Departamento" required>
+
                     </li>
                     <li>
                         <h4>Fecha de Nacimiento</h4>
@@ -234,7 +251,7 @@ and open the template in the editor.
                         <input type="text" name="etnia" placeholder="etnia" required>
                     </li>
                 </ul>
-                <ul>
+                <ul class="ubicacion">
                     <li><h3>Ubicación</h3></li>
                     <li>
                         <h4>Ciudad</h4>
@@ -261,7 +278,7 @@ and open the template in the editor.
                         <input type="text" name="email" placeholder="E-mail"  required>
                     </li>
                 </ul>
-                <ul>
+                <ul class="datosPersonales">
                     <li><h3>Datos de sguridad social en salud</h3></li>
                     <li>
                         <h4>Regimen</h4>
@@ -297,43 +314,43 @@ and open the template in the editor.
                     </tr>
                     <tr>
                         <td>Primaria</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="text" name="primaria"></td>
+                        <td><input type="text" name="primaria"></td>
+                        <td><input type="text" name="primaria"></td>
                     </tr>
                     <tr>
                         <td>Secundaria</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="text" name="segundaria"></td>
+                        <td><input type="text" name="segundaria"></td>
+                        <td><input type="text" name="segundaria"></td>
                     </tr>
                     <tr>
                         <td>Superior</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="text" name="superior"></td>
+                        <td><input type="text" name="superior"></td>
+                        <td><input type="text" name="superior"></td>
                     </tr>
                     <tr>
                         <td>Especialización</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="text" name="especializacion"></td>
+                        <td><input type="text" name="especializacion"></td>
+                        <td><input type="text" name="especializacion"></td>
                     </tr>
                     <tr>
                         <td>Maestria</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="text" name="maestria"></td>
+                        <td><input type="text" name="maestria"></td>
+                        <td><input type="text" name="maestria"></td>
                     </tr>
                     <tr>
                         <td>Doctorado</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="text" name="doctorado"></td>
+                        <td><input type="text" name="doctorado"></td>
+                        <td><input type="text" name="doctorado"></td>
                     </tr>
                 </table>
 
-                <ul>
+                <ul class="botones">
                     <li>
                         <input id="btnRegistrarTrabajadores" type="button" value="Aceptar">
                         <input id="btnCancelarTrabajadores" type="button" value="Cancelar">
@@ -341,7 +358,7 @@ and open the template in the editor.
                 </ul>
 
             </form>
-        </div>
+        </div>-->
         <!--Fin Formulario Trabajadores-->
     </body>
 </html>

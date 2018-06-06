@@ -1,3 +1,4 @@
+var dep;
 function iniciar_evento(){
 
     var d=recibirValorGet();
@@ -18,14 +19,18 @@ function iniciar_evento(){
 
     consultarDatos("data/colombia.json",{},function(rs){
         console.log(rs);
+        globales._departamentos=rs;
+        crear_data_list("txt_dep_nacimiento",rs,"id","departamento");
         
     });
     agregarEvento("btnRegistrarParticiapantes","click",function(){
         var datos = $("#formPobladores").serializarFormulario();
+       
         
-        console.log(datos);
         if(false!=datos){
-                registrarDato("participantes",datos,function(rs){
+             datos.estado_registro="registrado";
+             console.log(datos);
+                registrarDato("participantes",{datos:datos,id:data.id},function(rs){
                         if(rs.respuesta==true){
                             mostrarMensaje(rs);
                         }
@@ -42,21 +47,44 @@ function iniciar_evento(){
     });
     
     
-    agregarEvento("btnRegistrarTrabajadores","click",function(){
-        var datos = $("#formTrabajadores").serializarFormulario();
-        
-        console.log(datos);
-        if(false!=datos){
-                registrarDato("usuarios",datos,function(rs){
-                        mostrarMensaje(rs);
-                },"formTrabajadores");
-        }else{
-                mostrarMensaje("Por favor ingresa los campos requeridos");
-        }
+ 
+    agregarEvento("txt_dep_nacimiento","keypress",function(e){        
+        console.log(e);
+        console.log(e.key);
+        dep=[];
+         if (e.keyCode != 13 && e.key!=undefined) {
+            for(var el in globales._departamentos){
+                console.log(globales._departamentos[el].departamento.toUpperCase());
+                console.log(e.key);
+                console.log(globales._departamentos[el].departamento.indexOf(e.key));
+                if(globales._departamentos[el].departamento.toUpperCase().indexOf(e.key.toUpperCase()) >= 0){
+                    
+                    //console.log(globales._departamentos[el].departamento);
+                    dep.push(globales._departamentos[el]);
+                }
+            }
+            console.log(dep)
+            crear_data_list("lista_datos",dep,"id","departamento");  
+         }
+            
     });
-    
-    agregarEvento("btnCancelarTrabajadores","click",function(){
-        limpiarFormulario("formTrabajadores");
+    agregarEvento("txt_dep_nacimiento","change",function(e){
+        console.log(e);
+        dep=[];
+        for(var el in globales._departamentos){
+              
+                if(globales._departamentos[el].id== e.srcElement.value  ){
+                    
+                    console.log(globales._departamentos[el].ciudades);
+                    dep.push(globales._departamentos[el].ciudades);
+                }
+            }
+
+            crear_data_list_dos("lista_datos_2",dep);
+    });
+
+    agregarEvento("btn_Regresar","click",function(){
+        location.href="menuEventos.html";
     });
 }
 agregarEventoLoad(iniciar_evento);

@@ -472,7 +472,7 @@ function crear_data_list(id_data_list,datos,id,valor){
           sel.innerHTML="";
           var opt=document.createElement("option");
           opt.innerHTML="SELECCIONA UNA";
-          opt.setAttribute("value","0");
+          opt.setAttribute("value","--");
           sel.appendChild(opt); 
           
 
@@ -495,6 +495,28 @@ function crear_data_list(id_data_list,datos,id,valor){
       }
     }
  });
+  console.log(sel);
+}
+function crear_data_list_dos(id_data_list,datos){
+  var existe=false;
+  var sel=document.getElementById(id_data_list);
+          sel.innerHTML="";
+          var opt=document.createElement("option");
+          opt.innerHTML="SELECCIONA UNA";
+          opt.setAttribute("value","--");
+          sel.appendChild(opt); 
+          
+
+     for(var l in datos[0]){
+      console.log(datos[0][l]);
+     
+      
+        opt.innerHTML=datos[0]  [l];
+        sel.appendChild(opt); 
+        existe=false;
+        var opt=document.createElement("option");
+      
+    }
   console.log(sel);
 }
 /*

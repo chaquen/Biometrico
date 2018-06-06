@@ -4,14 +4,17 @@
 //variable que almacena el usuario
 
 var globales={
-	//_URL:"http://localhost/api_biometric/",
-	_URL:"https://biometric.mohansoft.com/",
+	_URL_OFFLINE:"http://localhost/api_biometric/",
+	_URL_BE:"http://localhost/api_local_biometric/",
+	_URL_ONLINE:"https://biometric.mohansoft.com/",
+	_URL:"",
 	
 	//_URL:"https://",
 	_usuario:false,
 	_cerrar_sesion:true,
 	_recordarme:false,
 	_eventos:false,
+	_departamentos:false,
 
 };
 

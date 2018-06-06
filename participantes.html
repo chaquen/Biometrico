@@ -8,6 +8,7 @@ and open the template in the editor.
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <link href="estilo/evento.css" rel="stylesheet" type="text/css"/>
@@ -24,6 +25,8 @@ and open the template in the editor.
             <script src="script_data/prototipos/prototipos.js" type="text/javascript"></script>
             <script src="script_data/globales.js" type="text/javascript"></script>
             <script src="script_data/participantes.js" type="text/javascript"></script>
+            <script src="script_data/actualizar_registro_participantes.js" type="text/javascript"></script>
+            <script src="script_data/appsw.js" type="text/javascript"></script>
 
 
         <!--fin script edgar-->
@@ -36,7 +39,7 @@ and open the template in the editor.
             <input type="hidden" id="id_evento" name="id_evento">
             <input type="button" value="Registrar Poblador" id="btn_RegitrarP">
             
-            <input type="button" value="volver al menu">
+            <input type="button" value="volver al menu" id="btn_Regresar">
 
         </div>
         
@@ -88,8 +91,11 @@ and open the template in the editor.
                     <li>
                         <h4>Lugar de Nacimiento</h4>
 
-                        <input type="text" name="ciud_nacimiento" placeholder="Ciudad" required>
-                        <input type="text" name="dep_nacimiento" placeholder="Departamento" required>
+                        <input type="text" id="txt_dep_nacimiento" name="dep_nacimiento" placeholder="Departamento" list="lista_datos" required >
+                        <datalist id="lista_datos"></datalist> 
+
+                        <input type="text" id="txt_ciud_nacimiento" name="ciud_nacimiento" list="lista_datos_2" placeholder="Ciudad" required>
+                        <datalist id="lista_datos_2"></datalist>                             
 
 
                     </li>

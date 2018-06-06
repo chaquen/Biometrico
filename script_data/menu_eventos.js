@@ -22,9 +22,7 @@ function iniciar__menu_eventos(){
 
 	},"");
 
-	consultarDatos("eventos",{},function(){
-		
-	});
+	
 }
 
 function dibujar_lista_eventos(rs){

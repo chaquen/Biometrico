@@ -1,92 +1,72 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html><head><META http-equiv="Content-Type" content="text/html; charset=utf-8"></head><body>
+ 
+    <div>
         
-        <link href="estilo/evento.css" rel="stylesheet" type="text/css"/>
-        
-        <!--script edgar-->
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-            <script src="Js/inicio.js" type="text/javascript"></script>
-            
-            <script src="script_data/funciones/utilidades.js" type="text/javascript"></script>
-            <script src="script_data/funciones/formatos.js" type="text/javascript"></script>
-            <script src="script_data/funciones/peticiones_ajax.js" type="text/javascript"></script>
-            <script src="script_data/funciones/CrudBase.js" type="text/javascript"></script>
-            <script src="script_data/funciones/storage.js" type="text/javascript"></script>
-            <script src="script_data/prototipos/prototipos.js" type="text/javascript"></script>
-            <script src="script_data/globales.js" type="text/javascript"></script>
-            <script src="script_data/participantes.js" type="text/javascript"></script>
-
-
-        <!--fin script edgar-->
-    </head>
-    <body>
-        <!--Datos del evento-->
-        <div class="nombreEven">
+        <div>
             <h1>Nombre del Evento</h1>
-            <input type="button" value="Registrar Poblador" id="btn_RegitrarP">
-            <input type="button" value="Registrar Trabajador" id="btn_RegitrarT">
+            <input type="hidden" name="id_evento">
+            <input type="button" value="Registrar Poblador">
+            
             <input type="button" value="volver al menu">
         </div>
         
-        <!--Division del Formulario de Pobladores-->
-        <div class="contenedor" id="contenedorP">
+        
+        <div>
             
-            <form id="formPobladores">
-                <h6 class="salir">X<h6>
+            <form target="_blank" onsubmit="try {return window.confirm(&quot;Vas a enviar información a una página externa.\n¿Seguro que quieres continuar?&quot;);} catch (e) {return false;}">
+                <h6>X<h6>
                 <h1>POBLADORES</h1>
-                <ul class="identificacion">
+
+
+                <ul>
+
                     <li><h3>Identificación</h3></li>
                     <li>
                         <h4>Tipo de documento</h4>
                         <select name="tipo_doc">
-                            <option>Cedula Ciudadania</option>
-                            <option>Cedula extranjera</option>
-                            <option>Passaporte</option>
+                            <option value="CC">Cedula Ciudadania</option>
+                            <option value="CE">Cedula extranjera</option>
+                            <option value="PS">Passaporte</option>
                         </select>
                     </li>
                     <li>
                         <h4>Numero Documento</h4>
-                        <input type="text" name="documento" placeholder="Documento">
+                        <input type="text" name="documento">
                     </li>
                     <li>
                         <h4>Lugar de Expedidión</h4>
-                        <input type="text" name="lugar_exp" placeholder="Lugar expedición">
+                        <input type="text" name="lugar_exp">
                     </li>
                     <li>
                         <h4>Primer Apellido</h4>
-                        <input type="text" name="pri_apellido" placeholder="Primer Apellido">
+                        <input type="text" name="pri_apellido">
                     </li>
                     <li>
                         <h4>Segundo Apellido</h4>
-                        <input type="text" name="seg_apellido" placeholder="Segundo Apellido">
+                        <input type="text" name="seg_apellido">
                     </li>
                     <li>
                         <h4>Primer Nombre</h4>
-                        <input type="text" name="pri_nombre" placeholder="Primer Nombre">
+                        <input type="text" name="pri_nombre">
                     </li>
                     <li>
                         <h4>Segundo Nombre</h4>
-                        <input type="text" name="seg_nombre" placeholder="Segundo Nombre">
+                        <input type="text" name="seg_nombre">
                     </li>
                 </ul>
-                <ul class="datosPersonales">
+                <ul>
                     <li><h3>Datos Personales</h3></li>
                     <li>
                         <h4>Lugar de Nacimiento</h4>
-                        <input type="text" name="ciud_nacimiento" placeholder="Ciudad">
-                    </li>
-                    <li>
-                        <h4>-</h4>
-                        <input type="text" name="dep_nacimiento" placeholder="Departamento">
+
+
+                        <input type="text" name="dep_nacimiento">
+                         
+
+                        <input type="text" name="ciud_nacimiento">
+                                                     
+
+
                     </li>
                     <li>
                         <h4>Fecha de Nacimiento</h4>
@@ -101,33 +81,33 @@ and open the template in the editor.
                     </li>
                     <li>
                         <h4>Capacidades Diferentes</h4>
-                        <input type="text" name="cap_dife" placeholder="Capacidades">
+                        <input type="text" name="cap_dife">
                     </li>
                     <li>
                         <h4>Etnia</h4>
-                        <input type="text" name="etnia" placeholder="etnia">
+                        <input type="text" name="etnia">
                     </li>
                 </ul>
-                <ul class="ubicacion">
+                <ul>
                     <li><h3>Ubicación</h3></li>
                     <li>
                         <h4>Zona</h4>
-                        <input type="text" name="zona" placeholder="Zona">
+                        <input type="text" name="zona">
                     </li>
                     <li>
                         <h4>Municipio</h4>
-                        <input type="text" name="municipio" placeholder="Municipio">
+                        <input type="text" name="municipio">
                     </li>
                     <li>
                         <h4>Celular</h4>
-                        <input type="number" name="celular" placeholder="Celular">
+                        <input type="number" name="celular">
                     </li>
                     <li>
                         <h4>Correo Electronico</h4>
-                        <input type="text" name="email" placeholder="E-mail">
+                        <input type="text" name="email">
                     </li>
                 </ul>
-                <ul class="escolaridad">
+                <ul>
                     <li><h3>Escolaridad</h3></li>
                     <li>
                         <h4>Nivel alcanzado</h4>
@@ -141,220 +121,30 @@ and open the template in the editor.
                     </li>
                     <li>
                         <h4>Titulo obtenido</h4>
-                        <input name="titulo_obt" type="text" placeholder="Nombre Titulo">
+                        <input name="titulo_obt" type="text">
                     </li>
                 </ul>
-                <ul class="datosP">
+                <ul>
                     <li><h3>Datos Procesos PDP</h3></li>
                     <li>
                         <h4>Organizaciòn</h4>
-                        <input name="organizacion" type="text" placeholder="Organizaciòn">
+                        <input name="organizacion" type="text">
                     </li>
                     <li>
                         <h4>Proceso</h4>
-                        <input name="proceso" type="text" placeholder="Proceso">
+                        <input name="proceso" type="text">
                     </li>
                 </ul>
-                <ul class="botones">
+                <ul>
                     <li>
-                        <input id="btnRegistrarParticiapantes" type="button" value="Aceptar">
-                        <input id="btnCancelarParticiapantes" type="button" value="Cancelar">
+                        <input type="button" value="Aceptar">
+                        <input type="button" value="Cancelar">
                     </li>
                 </ul>
-            </form>
+            </h6></h6></form>
         </div>
-        <!--Fin formulario de pobladores-->
+        
 
-        <!--Formulario Trabajadores-->
-        <div class="contenedor" id="contenedorT">
-            <form id="formTrabajadores">
-                <h6 class="salir">X</h6>
-                <h1>TRABAJADORES</h1>
-                <ul class="identificacion">
-                    <li><h3>Identificación</h3></li>
-                    <li>
-                        <h4>Tipo de documento</h4>
-                        <select name="tipo_doc">
-                            <option>Cedula Ciudadania</option>
-                            <option>Cedula extranjera</option>
-                            <option>Passaporte</option>
-                        </select>
-                    </li>
-                    <li>
-                        <h4>Numero Documento</h4>
-                        <input type="text" name="documento" placeholder="Documento">
-                    </li>
-                    <li>
-                        <h4>Lugar de Expedidión</h4>
-                        <input type="text" name="lugar_exp" placeholder="Lugar expedición">
-                    </li>
-                    <li>
-                        <h4>Primer Apellido</h4>
-                        <input type="text" name="pri_apellido" placeholder="Primer Apellido">
-                    </li>
-                    <li>
-                        <h4>Segundo Apellido</h4>
-                        <input type="text" name="seg_apellido" placeholder="Segundo Apellido">
-                    </li>
-                    <li>
-                        <h4>Primer Nombre</h4>
-                        <input type="text" name="pri_nombre" placeholder="Primer Nombre">
-                    </li>
-                    <li>
-                        <h4>Segundo Nombre</h4>
-                        <input type="text" name="seg_nombre" placeholder="Segundo Nombre">
-                    </li>
-                </ul>
-                <ul class="datosPersonales">
-                    <li><h3>Datos Personales</h3></li>
-                    <li>
-                        <h4>Lugar de Nacimiento</h4>
-                        <input type="text" name="ciud_nacimiento" placeholder="Ciudad">
-                    </li>
-                    <li>
-                        <h4>-</h4>
-                        <input type="text" name="dep_nacimiento" placeholder="Departamento">
-                    </li>
-                    <li>
-                        <h4>Fecha de Nacimiento</h4>
-                        <input name="fecha_nac" type="date">
-                    </li>
-                    <li>
-                        <h4>Genero</h4>
-                        <select name="genero">
-                            <option>Hombre</option>
-                            <option>Mujer</option>
-                        </select>
-                    </li>
-                    <li>
-                        <h4>Tipo de Sangre</h4>
-                        <select name="tipo_sangre">
-                            <option>A</option>
-                            <option>A</option>
-                            <option>AB</option>
-                            <option>O</option>
-                        </select>
-                    </li>
-                    <li>
-                        <h4>RH</h4>
-                        <select name="rh">
-                            <option>+</option>
-                            <option>-</option>
-                        </select>
-                    </li>
-                    <li>
-                        <h4>Etnia</h4>
-                        <input type="text" name="etnia" placeholder="etnia">
-                    </li>
-                </ul>
-                <ul class="ubicacion">
-                    <li><h3>Ubicación</h3></li>
-                    <li>
-                        <h4>Ciudad</h4>
-                        <input type="text" name="ciudad_resi" placeholder="Ciudad">
-                    </li>
-                    <li>
-                        <h4>Dirección</h4>
-                        <input type="text" name="dire_vivienda" placeholder="Dirección">
-                    </li>
-                    <li>
-                        <h4>Barrio</h4>
-                        <input type="text" name="barrio" placeholder="Barrio"> 
-                    </li>
-                    <li>
-                        <h4>Telefono Fijo</h4>
-                        <input type="number" name="tel_fijo" placeholder="Telefono Fijo">
-                    </li>
-                    <li>
-                        <h4>Celular</h4>
-                        <input type="number" name="celular" placeholder="Celular">
-                    </li>
-                    <li>
-                        <h4>Correo Electronico</h4>
-                        <input type="text" name="email" placeholder="E-mail">
-                    </li>
-                </ul>
-                <ul class="datosPersonales">
-                    <li><h3>Datos de sguridad social en salud</h3></li>
-                    <li>
-                        <h4>Regimen</h4>
-                        <select name="regimen">
-                            <option>Contributivo</option>
-                            <option>Subsidiado</option>
-                        </select>
-                    </li>
-                    <li>
-                        <h4>EPS/ARS</h4>
-                        <input type="text" name="eps_arl" placeholder="Nombre EPS/ARS">
-                    </li>
-                    <li>
-                        <h4>IPS</h4>
-                        <input type="text" name="ips" placeholder="Nombre IPS">
-                    </li>
-                    <li>
-                        <h4>Nivel de SISBEN</h4>
-                        <input type="number" name="sisben" placeholder="0">
-                    </li>
-                    <li>
-                        <h4>Puntaje</h4>
-                        <input type="number" name="puntaje" placeholder="0">
-                    </li>
-                </ul>
-                <h2>Nivel de Estudios</h2>
-                <table>
-                    <tr>
-                        <td>Nivel</td>
-                        <td>Institución</td>
-                        <td>Titulo</td>
-                        <td>Soporte</td>
-                    </tr>
-                    <tr>
-                        <td>Primaria</td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>Secundaria</td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>Superior</td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>Especialización</td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>Maestria</td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td>Doctorado</td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                    </tr>
-                </table>
-
-                <ul class="botones">
-                    <li>
-                        <input id="btnRegistrarTrabajadores" type="button" value="Aceptar">
-                        <input id="btnCancelarTrabajadores" type="button" value="Cancelar">
-                    </li>
-                </ul>
-
-            </form>
-        </div>
-        <!--Fin Formulario Trabajadores-->
-    </body>
-</html>
+      
+    </div>
+</body></html>

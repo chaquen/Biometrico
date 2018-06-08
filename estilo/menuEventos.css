@@ -75,6 +75,7 @@ ul ul {
 }
 #wrapper {  
     font-size: 0.8125em;    /* 13/16 = 0.8125*/
+    display: none;
 }
  
 .menu > li > a {
@@ -211,7 +212,7 @@ span {
 }
 #menuAdmin {
     width: 20%;
-    margin: auto;
+    margin: 50px auto;
     text-align: center;
 }
 #menuAdmin ul {
@@ -220,6 +221,25 @@ span {
 }
 #menuAdmin ul li {
     border: 1px solid black;
-    padding-top: 10px;
-    padding-bottom: 20px;
+    cursor: pointer;
+    margin: 3px;
+}
+
+.volver {
+    padding: 10px 20px;
+    background: red;
+    cursor: pointer;
+    color: white;
+}
+.mensaje {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: none;
+}
+.mensaje input[type=button] {
+    padding: 10px 20px;
+    cursor: pointer;
 }

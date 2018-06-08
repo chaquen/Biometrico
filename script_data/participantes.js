@@ -17,12 +17,12 @@ function iniciar_evento(){
    
     console.log(globales._eventos[pos]);
 
-    consultarDatos("data/colombia.json",{},function(rs){
+    /*consultarDatos("data/colombia.json",{},function(rs){
         console.log(rs);
         globales._departamentos=rs;
         crear_data_list("txt_dep_nacimiento",rs,"id","departamento");
         
-    });
+    });*/
     agregarEvento("btnRegistrarParticiapantes","click",function(){
         var datos = $("#formPobladores").serializarFormulario();
        

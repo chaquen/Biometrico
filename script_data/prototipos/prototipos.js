@@ -16,6 +16,15 @@ function miObjetoAjax(url,datos,peticion){
     console.log(this.url);
 }
 
+function miObjetoAjaxOff(url,operacion,datos){
+    this.operacion=operacion;
+    this.datos=datos;
+    this.url=url;    
+    this.respuestaServidor;    
+    this.peticion_ajax=funPeticion;    
+    this.hora_cliente=horaCliente();
+    console.log(this.url);
+}
 
 
 

@@ -1,8 +1,10 @@
 var dep;
+var pos;
 function iniciar_evento(){
-
+    globales._URL=globales._URL_BE;
+    document.getElementById("contenedorP").style.display="none";
     var d=recibirValorGet();
-    var pos=d[0].split("=")[1];
+     pos=d[0].split("=")[1];
     //console.log(d);
     //onsole.log(d[0].split("=")[1]);
 
@@ -30,7 +32,9 @@ function iniciar_evento(){
         if(false!=datos){
              datos.estado_registro="registrado";
              console.log(datos);
-                registrarDato("participantes",{datos:datos,id:data.id},function(rs){
+             
+                //registrarDato("participantes",{datos:datos,id:data.id},function(rs){
+                registrarDatoOff(globales._URL+"controlador/controlador_participantes.php","crearParticipante",{datos:datos,id:data.id},function(rs){
                         if(rs.respuesta==true){
                             mostrarMensaje(rs);
                         }

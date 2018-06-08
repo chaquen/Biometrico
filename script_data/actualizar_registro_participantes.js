@@ -3,7 +3,7 @@
 agregarEventoLoad(iniciar_evento_actualizar);
 var data={id:undefined};
 function iniciar_evento_actualizar(){
-	var source = new EventSource(globales._URL_BE+'controlador/controlador_server.php');
+	var source = new EventSource(globales._URL_BE+'controlador/controlador_server.php?id_evento='+pos);
 
 	source.addEventListener('message', function(event) {
 	  data = JSON.parse(event.data);
@@ -11,6 +11,15 @@ function iniciar_evento_actualizar(){
 	  if(data.id!=undefined){
 	  	 source.close();
 	  	console.log(data.id);
+	  	if(data.estado=="por_registrar" && data.pri_nombre==""){
+	  		document.getElementById('contenedorP').style.display="block";
+	  		document.getElementById('tblParticipantes').style.display="none";
+	  		console.log(document.getElementById('contenedorP'));
+	  	}else{
+	  		document.getElementById('contenedorP').style.display="none";
+	  		document.getElementById('tblParticipantes').style.display="block";
+	  	}
+	  	
 	  }
 	}, false);
 

@@ -229,3 +229,47 @@ function editarDatoArchivo(url,dat,archivo,callback,id_formulario){
     }
    
 }
+
+function registrarDatoOff(url,evento_server,datos,funcion_despues,formulario){
+    
+    
+    if(datos){
+        var miAjax=new miObjetoAjaxOff(url,evento_server,datos);
+        miAjax.peticion_ajax();
+        miAjax.respuestaServidor.success(function(rs){
+            var r=devolverValoresServidorRegistro(rs);
+            
+                 funcion_despues(r);
+                 if(formulario!=undefined && r.respuesta== true){
+                    limpiarFormulario(formulario);
+                }  
+            
+        }).fail(function(){});
+    
+    }else{
+        mostrarMensaje({mensaje:"por favor ingresa valores ☻"});
+    }
+   
+}
+function devolverValoresServidorRegistro(rs){
+        
+        var d=eval(rs);
+        return d;
+}
+/* CONSULTAR DATOS 
+ * {evento_servidor} string que indica la operacion que va a realizar en el servidor
+ * {datos} objeto con la estructira que voy a  enviaren la peticion HTTP
+ * {funcion_depues} funccion que se realizara despues de recibir la respuesta del servidor*/    
+function consultarDatosOff(url,evento_server,datos,funcion_despues){
+    
+    var miAjax=new miObjetoAjax(url,evento_server,datos);
+    miAjax.peticion_ajax();
+    
+    miAjax.respuestaServidor.success(function(rs){
+        var r=eval(rs);
+        
+        funcion_despues(r);
+    }).fail(function(){});
+    
+    
+}

@@ -24,7 +24,8 @@ and open the template in the editor.
             <script src="script_data/prototipos/prototipos.js" type="text/javascript"></script>
             <script src="script_data/globales.js" type="text/javascript"></script>
             <script src="script_data/participantes.js" type="text/javascript"></script>
-
+            <script src="script_data/actualizar_registro_participantes.js" type="text/javascript"></script>
+            <script src="script_data/offline.js" type="text/javascript"></script>
             <script src="Js/inicio.js" type="text/javascript"></script>
         <!--fin script edgar-->
     </head>
@@ -32,6 +33,7 @@ and open the template in the editor.
         <!--Datos del evento-->
         <div class="nombreEven">
             <h2 id="h1NombreDelEvento">Nombre del Evento</h2>
+            <input type="hidden" id="id_evento" name="id_evento">
         </div>
         
         <!--Division del Formulario de Pobladores-->
@@ -74,14 +76,20 @@ and open the template in the editor.
                 </ul>
                 <ul class="datosPersonales">
                     <li><h4>Datos Personales</h4></li>
+
+                    <li>
+                        <h6>Departamento</h6>
+                        <input type="text" id="txt_dep_nacimiento" name="dep_nacimiento" placeholder="Departamento" list="lista_datos" class="mdl-textfield__input" required >
+                        <datalist id="lista_datos"></datalist> 
+
+                       
+                    </li>
                     <li>
                         <h6>Lugar de Nacimiento</h6>
-                        <input type="text" name="ciud_nacimiento" placeholder="Ciudad" class="mdl-textfield__input" required>
+                        <input id="txt_ciud_nacimiento" type="text" name="ciud_nacimiento" placeholder="Ciudad" class="mdl-textfield__input" list="lista_datos_2" required>
+                        <datalist id="lista_datos_2"></datalist>                             
                     </li>
-                    <li>
-                        <h6>-</h6>
-                        <input type="text" name="dep_nacimiento" placeholder="Departamento" class="mdl-textfield__input" required>
-                    </li>
+                    
                     <li>
                         <h6>Fecha de Nacimiento</h6>
                         <input name="fecha_nac" type="date" required>

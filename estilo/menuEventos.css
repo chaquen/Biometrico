@@ -209,3 +209,17 @@ ul ul {
 span {
     cursor: pointer;
 }
+#menuAdmin {
+    width: 20%;
+    margin: auto;
+    text-align: center;
+}
+#menuAdmin ul {
+    width: 100%;
+    display: table;
+}
+#menuAdmin ul li {
+    border: 1px solid black;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}

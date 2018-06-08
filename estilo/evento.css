@@ -22,10 +22,11 @@ ul li:first-child {
     width: 100%;
 }
 .nombreEven {
-    width: 80%;
+    width: 70%;
     margin: auto;
     text-align: center;
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     background-color: #D6A5BB;
 }
 .contenedor {
@@ -44,7 +45,7 @@ ul li:first-child {
     border-radius: 100%;
 }
 .contenedor form {
-    width: 80%;
+    width: 70%;
     display: table;
     padding: 20px;
     margin: auto;
@@ -58,16 +59,16 @@ ul li:first-child {
     width: 33%;
 }
 .identificacion li:nth-child(5){
-    width: 50%;
+    width: 49%;
 }
 .identificacion li:nth-child(6){
-    width: 50%;
+    width: 49%;
 }
 .identificacion li:nth-child(7){
-    width: 50%;
+    width: 49%;
 }
 .identificacion li:nth-child(8){
-    width: 50%;
+    width: 49%;
 }
 
 .datosPersonales {
@@ -151,17 +152,13 @@ select {
     margin-top: 5px;
 }
 table {
-    width: 95%;
+    width: 70%;
     padding: 20px;
     border: 1px solid black;
     margin: auto;
+    text-align: center;
 }
-table td {
-    width: 10%;
-}
-table td:nth-child(2){
-    width: 40%;
-}
-table td:nth-child(3){
-    width: 40%;
+tbody tr td {
+    width: 20%;
+    padding: 10px;
 }

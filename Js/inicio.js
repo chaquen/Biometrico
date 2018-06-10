@@ -7,10 +7,39 @@ $(document).ready(function(){
         $('.mascara, .contenedor').fadeOut('slow');
     });
     
-    $('#btn_RegitrarP').click(function(){
-        $('#contenedorP').fadeIn('slow');
+    $('.volver').click(function(){
+        $('#wrapper').fadeOut('fast');
+        $('#menuAdmin').fadeIn('slow');
     });
-    $('#btn_RegitrarT').click(function(){
-        $('#contenedorT').fadeIn('slow');
+    
+    $('#btnEventos').click(function(){
+        $('#menuAdmin').fadeOut('fast');
+        $('#wrapper').fadeIn('slow');
     });
+    
+    $('#btnInstalar').click(function(){
+        $('#menuAdmin').fadeOut('fast');
+        $('#msjInstalando').fadeIn('slow');
+    });
+    
+    $('#btnAceptaIns').click(function(){
+        $('#msjInstalando').fadeOut('fast');
+        $('#mensajeFin').fadeIn('slow');
+    });
+    
+    $('#btnAceptarTotal').click(function(){
+        $('#mensajeFin').fadeOut('fast');
+        $('#menuAdmin').fadeIn('slow');
+    });
+    
+    $('#btnSincronizar').click(function(){
+        $('#menuAdmin').fadeOut('fast');
+        $('#msjIns').fadeIn('slow');
+    });
+    
+    $('#btnAceptarSin').click(function(){
+        $('#msjIns').fadeOut('fast');
+        $('#menuAdmin').fadeIn('slow');
+    });
+    
 });

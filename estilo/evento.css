@@ -31,7 +31,11 @@ ul li:first-child {
 }
 .contenedor {
     width: 100%;
-    margin-top: 20px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: table;
+    background-color: rgba(1,1,1,0.7);
 }
 .salir {
     float: right;
@@ -49,6 +53,7 @@ ul li:first-child {
     display: table;
     padding: 20px;
     margin: auto;
+    background-color: white;
 }
 .contenedor h1 {
     text-align: center;

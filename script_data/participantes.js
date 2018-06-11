@@ -8,7 +8,7 @@ function iniciar_evento_participantes(){
     //console.log(d);
     //onsole.log(d[0].split("=")[1]);
 
-    globales._eventos=obtener_local_storage("lsEventos");
+    //globales._eventos=obtener_local_storage("lsEventos");
     for(var f in globales._eventos){
         if(globales._eventos[f].id==pos){
              document.getElementById("h1NombreDelEvento").innerHTML=globales._eventos[f].name;

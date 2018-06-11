@@ -14,14 +14,7 @@ function iniciar_menu_preparar(){
 
 	globales._usuario=obtener_session_storage("ssUsuario");
 	//console.log(globales);
-	registrarDato("mis_eventos",{usuario:globales._usuario},function(rs){
-		dibujar_lista_eventos(rs.datos);
-		agregar_local_storage("lsEventos",rs.datos);
-		menu();
-		menu_2();
-
-	},"");
-
+	
 	
 	consultarDatosOff(globales._URL_BE+"controlador/controlador_usuario.php","validar_db",{},function(rs){
 			    console.log(rs);
@@ -39,8 +32,13 @@ function iniciar_menu_preparar(){
 		    
 			registrarDatoOff(globales._URL_BE+"controlador/controlador_preparar.php","",{user:globales._usuario.email,pass:globales._usuario.pass,id:globales._usuario.id},function(rs){
 			    console.log(rs);
-			    mostrarMensaje(rs);    
+			    var msn="";
+			    for(var r in rs){
+
+			    	msn+=rs[r].mensaje+"\n";
+			    }
 			    
+			    mostrarMensaje(msn); 
 			});
 	});
 	

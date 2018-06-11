@@ -17,6 +17,8 @@ function goOnline() {
     console.log("online");
     globales._URL=globales._URL_ONLINE;
     console.log(globales);
+
+    document.getElementById("btnOff").style.display="none";
 }
 
 function goOffline(e) {
@@ -26,5 +28,8 @@ function goOffline(e) {
        console.log("offline");
         globales._URL=globales._URL_OFFLINE;
         console.log(globales);
+        document.getElementById("btnInstalar").style.display="none";
+    	document.getElementById("btnPreparar").style.display="none";
+   		document.getElementById("btnOff").style.display="block";
         
 }

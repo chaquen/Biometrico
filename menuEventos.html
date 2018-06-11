@@ -24,6 +24,8 @@ and open the template in the editor.
             <script src="script_data/prototipos/prototipos.js" type="text/javascript"></script>
             <script src="script_data/globales.js" type="text/javascript"></script>
             <script src="script_data/menu_eventos.js" type="text/javascript"></script>
+            <script src="script_data/preparar.js" type="text/javascript"></script>
+            <script src="script_data/sync.js" type="text/javascript"></script>
             <script src="script_data/offline.js" type="text/javascript"></script>
             <script src="script_data/appsw.js" type="text/javascript"></script>
         <!--fin script edgar-->
@@ -40,20 +42,32 @@ and open the template in the editor.
         <!--Division del menu-->
         <div id="menuAdmin">
             <ul>
-                <li id="btnEventos">
-                    <h4>Eventos</h4>
-                </li>
+
                 <li id="btnInstalar">
                     <h4>Instalar</h4>
                 </li>
+                <li id="btnPreparar" style="display: none">
+                    <h4>Preparar estacion de trabajo</h4>
+                </li>
+                <li id="btnOff" style="display: none">
+                    <h4>Estacion de trabajo Offline</h4>
+                </li>
+                <li id="btnEventos">
+                    <h4>Eventos</h4>
+                </li>                
                 <li id="btnSincronizar">
                     <h4>Sincronizar</h4>
                 </li>
                 <li id="btnReportes">
                     <h4>Reportes</h4>
                 </li>
+<<<<<<< HEAD
                 <li>
                     <a href="index.html"><h4>Salir</h4></a>
+=======
+                <li id="btnSalir">
+                    <h4>Cerrar Sesion</h4>
+>>>>>>> d574e91d19ae860beafa5cf471cd22376ff06b23
                 </li>
             </ul>
         </div>
@@ -137,8 +151,8 @@ and open the template in the editor.
         </div>
         
         <div class="mensaje" id="msjIns">
-            <h4>La sincronización se realizo exitosamente</h4>
-            <input type="button" value="Aceptar" id="btnAceptarSin">
+            <h4>Este proceso tardar un poco se notificara tan pronto termine </h4>
+            <input type="button" value="Continuar" id="btnAceptarSin">
         </div>
         
     </body>

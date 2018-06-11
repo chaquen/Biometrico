@@ -1,7 +1,11 @@
 var dep;
 var pos;
+<<<<<<< HEAD
 var id;
 function iniciar_evento(){
+=======
+function iniciar_evento_participantes(){
+>>>>>>> d574e91d19ae860beafa5cf471cd22376ff06b23
     globales._URL=globales._URL_BE;
     document.getElementById("contenedorP").style.display="none";
     var d=recibirValorGet();
@@ -110,7 +114,7 @@ function iniciar_evento(){
         location.href="menuEventos.html";
     });
 }
-agregarEventoLoad(iniciar_evento);
+agregarEventoLoad(iniciar_evento_participantes);
 
 function dibujar_registrados(datos){
     var div=document.getElementById("tblParticipantesRegistrados");

@@ -1,6 +1,6 @@
 var dep;
 var pos;
-function iniciar_evento(){
+function iniciar_evento_participantes(){
     globales._URL=globales._URL_BE;
     document.getElementById("contenedorP").style.display="none";
     var d=recibirValorGet();
@@ -91,5 +91,5 @@ function iniciar_evento(){
         location.href="menuEventos.html";
     });
 }
-agregarEventoLoad(iniciar_evento);
+agregarEventoLoad(iniciar_evento_participantes);
 

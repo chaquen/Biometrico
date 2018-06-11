@@ -1,4 +1,4 @@
-function iniciar__menu_eventos(){
+function iniciar_menu_eventos(){
 	/*agregarEvento("btnContactar","click",function(){
 			var datos = $("#formContacto").serializarFormulario();
 			datos.origen="info@jedidiassalud.com";
@@ -22,7 +22,6 @@ function iniciar__menu_eventos(){
 
 	},"");
 
-	
 }
 
 function dibujar_lista_eventos(rs){
@@ -164,4 +163,4 @@ menuElements.insertAdjacentHTML('afterBegin','<button type="button" id="menutogg
 
 
 
-agregarEventoLoad(iniciar__menu_eventos);
+agregarEventoLoad(iniciar_menu_eventos);

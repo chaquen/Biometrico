@@ -37,9 +37,9 @@ $(document).ready(function(){
         $('#msjIns').fadeIn('slow');
     });
     
-    $('#btnAceptarSin').click(function(){
+    /*$('#btnAceptarSin').click(function(){
         $('#msjIns').fadeOut('fast');
         $('#menuAdmin').fadeIn('slow');
-    });
+    });*/
     
 });

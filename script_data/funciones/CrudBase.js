@@ -262,7 +262,7 @@ function devolverValoresServidorRegistro(rs){
  * {funcion_depues} funccion que se realizara despues de recibir la respuesta del servidor*/    
 function consultarDatosOff(url,evento_server,datos,funcion_despues){
     
-    var miAjax=new miObjetoAjax(url,evento_server,datos);
+    var miAjax=new miObjetoAjaxOff(url,evento_server,datos);
     miAjax.peticion_ajax();
     
     miAjax.respuestaServidor.success(function(rs){

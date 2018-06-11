@@ -24,7 +24,7 @@ and open the template in the editor.
             <script src="script_data/prototipos/prototipos.js" type="text/javascript"></script>
             <script src="script_data/globales.js" type="text/javascript"></script>
             <script src="script_data/participantes.js" type="text/javascript"></script>
-            <script src="script_data/actualizar_registro_participantes.js" type="text/javascript"></script>
+            <!--<script src="script_data/actualizar_registro_participantes.js" type="text/javascript"></script>-->
             <!--<script src="script_data/offline.js" type="text/javascript"></script>-->
             <script src="Js/inicio.js" type="text/javascript"></script>
         <!--fin script edgar-->
@@ -33,7 +33,7 @@ and open the template in the editor.
         <!--Datos del evento-->
         
         <div>
-            <input type="button" value="Volver al menu">
+            <a href="menuEventos.html" class="aVolver"><h4>Volver al Menu</h4></a>
         </div>
         
         <div class="nombreEven">
@@ -44,33 +44,11 @@ and open the template in the editor.
             <h3>Participantes</h3>
         </div>
         <div id="tblParticipantes">
-            <table>
-                <tr>
-                  <th class="mdl-data-table__cell--non-numeric">Primer Nombre</th>
-                  <th class="mdl-data-table__cell--non-numeric">Segundo Nombre</th>
-                  <th class="mdl-data-table__cell--non-numeric">Primer Apellido</th>
-                  <th class="mdl-data-table__cell--non-numeric">Segundo Apellido</th>
-                </tr>
-                <tr>
-                    <td class="mdl-data-table__cell--non-numeric">Carlos</td>
-                    <td class="mdl-data-table__cell--non-numeric">Antonio</td>
-                    <td class="mdl-data-table__cell--non-numeric">Martinez</td>
-                    <td class="mdl-data-table__cell--non-numeric">Correa</td>
-                </tr>
-                <tr>
-                    <td class="mdl-data-table__cell--non-numeric">Edgar</td>
-                    <td class="mdl-data-table__cell--non-numeric">Adrian</td>
-                    <td class="mdl-data-table__cell--non-numeric">Guzman</td>
-                    <td class="mdl-data-table__cell--non-numeric">Vargas</td>
-                </tr>
-                <tr>
-                    <td class="mdl-data-table__cell--non-numeric">Maria</td>
-                    <td class="mdl-data-table__cell--non-numeric">La bandida</td>
-                    <td class="mdl-data-table__cell--non-numeric">Puso Un</td>
-                    <td class="mdl-data-table__cell--non-numeric">Huevo </td>
-                </tr>
+            <table id="tblParticipantesRegistrados">
+                
+                
             </table>
-
+            <input type="button" value="Guardar Lista de participantes">
         </div>
         <!--Division del Formulario de Pobladores-->
         <div class="contenedor" id="contenedorP">

@@ -1,6 +1,6 @@
 
 
-agregarEventoLoad(iniciar_evento_actualizar);
+//agregarEventoLoad(iniciar_evento_actualizar);
 var data={id:undefined};
 function iniciar_evento_actualizar(){
 	var source = new EventSource(globales._URL_BE+'controlador/controlador_server.php?id_evento='+pos);
@@ -9,7 +9,7 @@ function iniciar_evento_actualizar(){
 	  data = JSON.parse(event.data);
 	  console.log(data);
 	  if(data.id!=undefined){
-	  	 source.close();
+	  	 //source.close();
 	  	console.log(data.id);
 	  	if(data.estado=="por_registrar" && data.pri_nombre==""){
 	  		document.getElementById('contenedorP').style.display="block";
@@ -29,15 +29,17 @@ function iniciar_evento_actualizar(){
 	  //var data = JSON.parse(event.data);
 	  //console.log(data);
 	  if(data.id!=undefined){
-	  	 source.close();
+	  	 //source.close();
 	  	console.log(data.id);
 	  }
 	  
 	}, false);
 
 	source.addEventListener('error', function(event) {
+            console.log(event);
 	  if (event.eventPhase == 2) { //EventSource.CLOSED
 	    //logger.log('> Connection was closed');
+            //source.close();
 	  	console.log(event);  
 	  }
 	}, false);

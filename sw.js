@@ -16,14 +16,14 @@ self.addEventListener('install', function(event) {
         '/Biometrico/script_data/funciones/storage.js',
         '/Biometrico/script_data/funciones/utilidades.js',
         '/Biometrico/script_data/prototipos/prototipos.js',
-        '/Biometrico/script_data/index/registro.js',
+        //'/Biometrico/script_data/index/registro.js',
         //'/Biometrico/script_data/globales.js',
         '/Biometrico/script_data/index.js',
         '/Biometrico/script_data/jquery.js',
         '/Biometrico/script_data/menu_eventos.js',
         '/Biometrico/script_data/participantes.js',
-        '/Biometrico/script_data/actualizar_registro_participantes.js',
-        '/Biometrico/script_data/offline.js',
+        //'/Biometrico/script_data/actualizar_registro_participantes.js',
+        '/Biometrico/script_data/offline.js'
       ]);
     })
   );

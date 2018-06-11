@@ -4,8 +4,8 @@
 //variable que almacena el usuario
 
 var globales={
-	_URL_OFFLINE:"http://localhost/api_biometric/",
-	_URL_BE:"http://localhost/localbiometric/",
+	_URL_OFFLINE:"http://localhost:8080/api_biometric/",
+	_URL_BE:"http://localhost:8080/localbiometric/",
 	_URL_ONLINE:"https://biometric.mohansoft.com/",
 	_URL:"",
 	

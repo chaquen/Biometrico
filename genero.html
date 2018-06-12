@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Participantes', 'Hombres', 'Mujeres'],
+          ['Genero', 3000,2000]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Nombre del Evento',
+            subtitle: 'Lugar y fecha del evento'
+          },
+          bars: 'horizontal' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+  </head>
+  <body>
+      <a href="menuEventos.html">Generar Reporte"</a>
+    <div id="barchart_material" style="width: 1200px; height: 500px; margin-left: 50px"></div>
+  </body>
+</html>

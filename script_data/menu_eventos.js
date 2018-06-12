@@ -11,16 +11,39 @@ function iniciar_menu_eventos(){
 				mostrarMensaje("Por favor ingresa los campos requeridos");
 			}
 	});*/
+	globales._usuario=obtener_local_storage("ssUsuario");
+	if(globales._usuario==false){
+		location.href="index.html";
+	}
 
-	globales._usuario=obtener_session_storage("ssUsuario");
-	//console.log(globales);
-	registrarDato("mis_eventos",{usuario:globales._usuario},function(rs){
+	
+	console.log(globales);
+	/*registrarDato("mis_eventos",{usuario:globales._usuario},function(rs){
 		dibujar_lista_eventos(rs.datos);
 		agregar_local_storage("lsEventos",rs.datos);
 		menu();
 		menu_2();
 
-	},"");
+	},"");*/
+
+	agregarEvento("btnEventos","click",function(){
+			registrarDatoOff(globales._URL_BE+"controlador/controlador_eventos.php","mis_eventos",
+						{usuario:globales._usuario},function(rs){
+                        if(rs.respuesta==true){
+                        	$('#menuAdmin').fadeOut('fast');
+        					$('#wrapper').fadeIn('slow');
+                           	dibujar_lista_eventos(eval(rs.valores_consultados));
+							agregar_local_storage("lsEventos",eval(rs.valores_consultados));
+							menu();
+							menu_2();
+                        }else{
+                        	mostrarMensaje("Aun no tienes eventos sincronizados o activos en este equipo");
+                        }
+                        
+                    
+      		},"");
+	});
+	
 
 }
 
@@ -48,7 +71,9 @@ function dibujar_lista_eventos(rs){
 			var inA=document.createElement("a");
 			inA.setAttribute("target","_blank");
 			inA.innerHTML=rs[e].atachments;
-			inA.href="http://pdpmagdalenacentro.org/assets/private/atachments/events/"+rs[e].atachments;
+			//inA.href="http://pdpmagdalenacentro.org/assets/private/atachments/events/"+rs[e].atachments;
+			inA.href=globales._URL_BE+"files/events/"+rs[e].id+"/"+rs[e].atachments;
+
 			var ilSpan=document.createElement("span");
 			ilSpan.innerHTML="DESCARGAR";
 			inA.appendChild(ilSpan);

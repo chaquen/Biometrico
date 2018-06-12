@@ -13,7 +13,7 @@ function iniciar_index(){
 							mostrarMensaje(rs);
 							globales._usuario=rs.datos;	
 							location.href=rs.redireccionar;
-							agregar_session_storage("ssUsuario",globales._usuario);
+							agregar_local_storage("ssUsuario",globales._usuario);
 						}else{
 							mostrarMensaje("Datos suministrados no concuerdan");
 						}					
@@ -21,12 +21,12 @@ function iniciar_index(){
 					},"formLogIn");
 
     			}else{
-    				registrarDatoOff(globales._URL+"controlador/controlador_participantes.php","login_local",{usuario:datos.login,pass:datos.password},function(rs){
+    				registrarDatoOff(globales._URL_BE+"controlador/controlador_participantes.php","login_local",{usuario:datos.login,pass:datos.password},function(rs){
 						if(rs.respuesta){
 							mostrarMensaje(rs);
 							globales._usuario=rs.datos;	
 							location.href=rs.redireccionar;
-							agregar_session_storage("ssUsuario",globales._usuario);
+							agregar_local_storage("ssUsuario",globales._usuario);
 						}else{
 							mostrarMensaje("Datos suministrados no concuerdan");
 						}					

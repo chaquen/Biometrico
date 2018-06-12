@@ -23,7 +23,8 @@ self.addEventListener('install', function(event) {
         '/Biometrico/script_data/menu_eventos.js',
         '/Biometrico/script_data/participantes.js',
         //'/Biometrico/script_data/actualizar_registro_participantes.js',
-        '/Biometrico/script_data/offline.js'
+        '/Biometrico/script_data/offline.js',
+        'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'
       ]);
     })
   );

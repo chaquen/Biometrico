@@ -12,24 +12,14 @@ function iniciar_menu_preparar(){
 			}
 	});*/
 
-	globales._usuario=obtener_session_storage("ssUsuario");
+	globales._usuario=obtener_local_storage("ssUsuario");
 	//console.log(globales);
 	
-	
-	consultarDatosOff(globales._URL_BE+"controlador/controlador_usuario.php","validar_db",{},function(rs){
-			    console.log(rs);
-			    mostrarMensaje(rs);    
-			    if(rs.respuesta){
-			    	document.getElementById("btnInstalar").style.display="none";
-			    	document.getElementById("btnPreparar").style.display="block";
-				}else{
-			    	document.getElementById("btnInstalar").style.display="block";
-			    	document.getElementById("btnPreparar").style.display="none";
-			    }
-	});
+	consultar_db();
 	
 	agregarEvento("btnPreparar","click",function(){
-		    
+		if(confirm("Estas seguro que deseas realizar esta accion, recuerda que se borraran los participantes que se hayan actualizado desde el servidor")){}
+		    console.log(globales._usuario);
 			registrarDatoOff(globales._URL_BE+"controlador/controlador_preparar.php","",{user:globales._usuario.email,pass:globales._usuario.pass,id:globales._usuario.id},function(rs){
 			    console.log(rs);
 			    var msn="";
@@ -45,3 +35,20 @@ function iniciar_menu_preparar(){
 }
 
 agregarEventoLoad(iniciar_menu_preparar);
+function consultar_db(){
+
+	consultarDatosOff(globales._URL_BE+"controlador/controlador_usuario.php","validar_db",{},function(rs){
+			    console.log(rs);
+			    
+			    if(rs.respuesta){
+			    	document.getElementById("btnInstalar").style.display="none";
+			    	document.getElementById("btnPreparar").style.display="block";
+			    	document.getElementById("btnAceptaIns").style.display="";
+				}else{
+			    	document.getElementById("btnInstalar").style.display="block";
+			    	document.getElementById("btnPreparar").style.display="none";
+			    	document.getElementById("btnAceptaIns").style.display="none";
+			    	mostrarMensaje(rs);    
+			    }
+	});
+}

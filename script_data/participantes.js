@@ -1,11 +1,9 @@
 var dep;
 var pos;
-<<<<<<< HEAD
 var id;
-function iniciar_evento(){
-=======
+
 function iniciar_evento_participantes(){
->>>>>>> d574e91d19ae860beafa5cf471cd22376ff06b23
+
     globales._URL=globales._URL_BE;
     document.getElementById("contenedorP").style.display="none";
     var d=recibirValorGet();
@@ -30,23 +28,10 @@ function iniciar_evento_participantes(){
         crear_data_list("txt_dep_nacimiento",rs,"id","departamento");
         
     });*/
-    console.log(globales._URL);
-    console.log(globales._URL+"controlador/controlador_participantes.php");
-    consultarDatosOff(globales._URL+"controlador/controlador_participantes.php","consultarParticipante",{},function(rs){
-        console.log(rs);   
-        console.log(eval(rs.datos));
-        console.log(eval(rs.registrados));
-        var d=eval(rs.datos);
-        if(d === null){
-            dibujar_registrados(eval(rs.registrados));
-            document.getElementById("contenedorP").style.display='none';
-        }else{
-            id=d[0].id;
-            document.getElementById("contenedorP").style.display='block';
-        }
-        
-        
-    });
+    //console.log(globales._URL);
+    //console.log(globales._URL+"controlador/controlador_participantes.php");
+    consultar_participantes()
+   
     agregarEvento("btnRegistrarParticiapantes","click",function(){
         var datos = $("#formPobladores").serializarFormulario();
        
@@ -55,11 +40,17 @@ function iniciar_evento_participantes(){
              datos.estado_registro="registrado";
              console.log(datos);
              console.log(id);
-             
+             datos.created_at=horaCliente();
+             datos.created_at=horaCliente();
+             datos.tipo_registro="nuevo";
+             datos.state=true;
                 //registrarDato("participantes",{datos:datos,id:data.id},function(rs){
-                registrarDatoOff(globales._URL+"controlador/controlador_participantes.php","crearParticipante",{datos:datos,id:id},function(rs){
+                registrarDatoOff(globales._URL+"controlador/controlador_participantes.php","crearParticipante",{datos:datos,id:id,id_evento:pos},function(rs){
                         if(rs.respuesta==true){
                             mostrarMensaje(rs);
+                            document.getElementById("contenedorP").style.display='none';
+                            document.getElementById("tblParticipantes").style.display='block';
+                            consultar_participantes();
                         }
                         
                     
@@ -113,6 +104,17 @@ function iniciar_evento_participantes(){
     agregarEvento("btn_Regresar","click",function(){
         location.href="menuEventos.html";
     });
+
+
+    agregarEvento("txt_cc","change",function(){
+        consultarDatosOff(globales._URL_BE+"controlador/controlador_usuario.php","validar_cc",{cc:this.value},function(rs){
+                console.log(rs);
+                
+                if(rs.respuesta==true){
+                    mostrarMensaje("Este documento ya esta registrado");
+                }
+        });
+    })
 }
 agregarEventoLoad(iniciar_evento_participantes);
 
@@ -173,3 +175,23 @@ function dibujar_registrados(datos){
     }
 }
 
+function consultar_participantes(){
+    consultarDatosOff(globales._URL+"controlador/controlador_participantes.php","consultarParticipantePendientes",{id:pos},function(rs){
+        console.log(rs);   
+        if(rs.pendientes.respuesta){
+            var d=eval(rs.pendientes.valores_consultados[0]);
+            id=d.id;
+            document.getElementById("contenedorP").style.display='block';
+        }
+
+
+        if(rs.registrados.respuesta){
+             //dibujar_registrados(eval(rs.registrados.valores_consultados));
+             dibujar_registrados(rs.registrados.valores_consultados);
+        }
+        
+        
+        
+        
+    });
+}

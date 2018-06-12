@@ -28,6 +28,7 @@ function goOffline(e) {
        console.log("offline");
         globales._URL=globales._URL_OFFLINE;
         console.log(globales);
+        console.log(document.getElementById("btnInstalar"));
         document.getElementById("btnInstalar").style.display="none";
     	document.getElementById("btnPreparar").style.display="none";
    		document.getElementById("btnOff").style.display="block";

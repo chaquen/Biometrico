@@ -13,8 +13,7 @@ $(document).ready(function(){
     });
     
     $('#btnEventos').click(function(){
-        $('#menuAdmin').fadeOut('fast');
-        $('#wrapper').fadeIn('slow');
+        
     });
     
     $('#btnInstalar').click(function(){

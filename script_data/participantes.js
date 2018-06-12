@@ -1,9 +1,7 @@
 var dep;
 var pos;
 var id;
-
 function iniciar_evento_participantes(){
-
     globales._URL=globales._URL_BE;
     document.getElementById("contenedorP").style.display="none";
     var d=recibirValorGet();

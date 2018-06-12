@@ -91,18 +91,24 @@ ul li:first-child {
     float: left;
     width: 16.6%;
 }
+.datosPersonales li:nth-child(3){
+    width: 20%;
+}
 .datosPersonales li:nth-child(4){
-    width: 16.6%;
+    width: 19%;
 }
 .datosPersonales li:nth-child(5){
-    width: 8.6%;
+    width: 8%;
 }
 .datosPersonales li:nth-child(6){
-    width: 24.6%;
+    width: 23.6%;
+}
+.datosPersonales li:nth-child(7){
+    width: 12%;
 }
 .ubicacion {
     clear: both;
-    width: 97%;
+    width: 98%;
 }
 .ubicacion li {
     float: left;
@@ -110,7 +116,7 @@ ul li:first-child {
 }
 .escolaridad {
     clear: both;
-    width: 98.5%;
+    width: 98%;
 }
 .escolaridad li {
     float: left;
@@ -121,7 +127,7 @@ ul li:first-child {
 }
 .datosP {
     clear: both;
-    width: 90%;
+    width: 98%;
 }
 .datosP li {
     float: left;
@@ -129,7 +135,7 @@ ul li:first-child {
 }
 .botones {
     clear: both;
-    width: 100%;
+    width: 98%;
     text-align: center;
 }
 input[type=text] {
@@ -138,6 +144,7 @@ input[type=text] {
     border-radius: 5px;
     margin-left: 2%;
     margin-top: 5px;
+    color: #59B959;
 }
 input[type=date] {
     width: 95%;
@@ -156,6 +163,12 @@ input[type=number] {
 input[type=button]{
     padding: 8px 20px;
     cursor: pointer;
+    background-color: #59B959;
+    color: white;
+}
+input[type=button]:hover {
+    background-color: #9DF69D;
+    color: #437843;
 }
 select {
     width: 95%;
@@ -174,4 +187,15 @@ table {
 tbody tr td {
     width: 20%;
     padding: 10px;
+}
+#formPobladores {
+    background-color: #54F585;
+    color: #437C43;
+}
+
+#formPobladores ul {
+    background-color: white;
+}
+h6, h5 {
+   text-shadow: 1px 1px 1px black;
 }

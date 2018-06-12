@@ -212,25 +212,25 @@ ul ul {
 span {
     cursor: pointer;
 }
-#menuAdmin {
+.menuAdmin {
     width: 20%;
     margin: 50px auto;
     text-align: center;
 }
-#menuAdmin ul {
+.menuAdmin ul {
     width: 100%;
     display: table;
 }
-#menuAdmin ul li {
+.menuAdmin ul li {
     border: 1px solid black;
     cursor: pointer;
     margin: 3px;
     background-color: #6BDCA7;
 }
-#menuAdmin ul li:hover {
+.menuAdmin ul li:hover {
     background-color: #13F98D;
 }
-#menuAdmin li a {
+.menuAdmin li a {
     color: black;
 }
 
@@ -255,4 +255,7 @@ span {
 img {
     text-align: center;
     margin-top: 50px;
+}
+#menuRepor {
+    display: none;
 }

@@ -36,6 +36,16 @@ $(document).ready(function(){
         $('#msjIns').fadeIn('slow');
     });
     
+    $('#btnReportes').click(function(){
+        $('#menuAdmin').fadeOut('fast');
+        $('#menuRepor').fadeIn('slow');
+    });
+    
+    $('#btnVolverMenu').click(function(){
+        $('#menuRepor').fadeOut('fast');
+        $('#menuAdmin').fadeIn('slow');
+    });
+    
     /*$('#btnAceptarSin').click(function(){
         $('#msjIns').fadeOut('fast');
         $('#menuAdmin').fadeIn('slow');

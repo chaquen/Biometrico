@@ -2,6 +2,12 @@ var dep;
 var pos;
 var id;
 function iniciar_evento_participantes(){
+
+
+    globales._usuario=obtener_local_storage("ssUsuario");
+    if(globales._usuario==false){
+        location.href="index.html";
+    }
     globales._URL=globales._URL_BE;
     document.getElementById("contenedorP").style.display="none";
     var d=recibirValorGet();
@@ -112,14 +118,22 @@ function iniciar_evento_participantes(){
                     mostrarMensaje("Este documento ya esta registrado");
                 }
         });
-    })
+    });
+    agregarEvento("btnGuardarAsistentes","click",function(){
+        consultarDatosOff(globales._URL_BE+"controlador/controlador_participantes.php","guardar_asistentes",{id_evento:pos},function(rs){
+                console.log(rs);
+                
+                mostrarMensaje(rs);
+        });
+    });
+    
 }
 agregarEventoLoad(iniciar_evento_participantes);
 
 function dibujar_registrados(datos){
     var div=document.getElementById("tblParticipantesRegistrados");
-    div.innerHTML="";
-    var tr=document.createElement("tr");
+    //div.innerHTML="";
+    /*var tr=document.createElement("tr");
     
     var th=document.createElement("th");
     th.className="mdl-data-table__cell--non-numeric";
@@ -141,7 +155,7 @@ function dibujar_registrados(datos){
     th.innerHTML="Segundo Apellido";
     tr.appendChild(th);
     
-    div.appendChild(tr);
+    div.appendChild(tr);*/
     for(var d in datos){
         var tr=document.createElement("tr");
         
@@ -181,11 +195,39 @@ function consultar_participantes(){
             id=d.id;
             document.getElementById("contenedorP").style.display='block';
         }
-
+        var div=document.getElementById("tblParticipantesRegistrados");
+        //div.innerHTML="";
+        var tr=document.createElement("tr");
+        
+        var th=document.createElement("th");
+        th.className="mdl-data-table__cell--non-numeric";
+        th.innerHTML="Primer Nombre";
+        tr.appendChild(th);
+        
+        var th=document.createElement("th");
+        th.className="mdl-data-table__cell--non-numeric";
+        th.innerHTML="Segundo Nombre";
+        tr.appendChild(th);
+        
+        var th=document.createElement("th");
+        th.className="mdl-data-table__cell--non-numeric";
+        th.innerHTML="Primer Apellido";
+        tr.appendChild(th);
+        
+        var th=document.createElement("th");
+        th.className="mdl-data-table__cell--non-numeric";
+        th.innerHTML="Segundo Apellido";
+        tr.appendChild(th);
+        
+        div.appendChild(tr);    
 
         if(rs.registrados.respuesta){
              //dibujar_registrados(eval(rs.registrados.valores_consultados));
              dibujar_registrados(rs.registrados.valores_consultados);
+        }
+
+        if(rs.verificados.respuesta){
+            dibujar_registrados(rs.verificados.valores_consultados);
         }
         
         

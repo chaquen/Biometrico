@@ -2,28 +2,28 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('v1').then(function(cache) {
       return cache.addAll([
-        '/Biometrico/',
-        '/Biometrico/index.html',
-        '/Biometrico/estilo/evento.css',
-        '/Biometrico/estilo/inicio.css',
-        '/Biometrico/estilo/menu.css',
-        '/Biometrico/estilo/menuEventos.css',        
-        '/Biometrico/Js/inicio.js',
-        '/Biometrico/Js/menu.js',
-        '/Biometrico/script_data/funciones/CrudBase.js',
-        '/Biometrico/script_data/funciones/formatos.js',
-        '/Biometrico/script_data/funciones/peticiones_ajax.js',
-        '/Biometrico/script_data/funciones/storage.js',
-        '/Biometrico/script_data/funciones/utilidades.js',
-        '/Biometrico/script_data/prototipos/prototipos.js',
-        //'/Biometrico/script_data/index/registro.js',
-        //'/Biometrico/script_data/globales.js',
-        '/Biometrico/script_data/index.js',
-        '/Biometrico/script_data/jquery.js',
-        '/Biometrico/script_data/menu_eventos.js',
-        '/Biometrico/script_data/participantes.js',
-        //'/Biometrico/script_data/actualizar_registro_participantes.js',
-        '/Biometrico/script_data/offline.js',
+        '/',
+        '/index.html',
+        '/estilo/evento.css',
+        '/estilo/inicio.css',
+        '/estilo/menu.css',
+        '/estilo/menuEventos.css',        
+        '/Js/inicio.js',
+        '/Js/menu.js',
+        '/script_data/funciones/CrudBase.js',
+        '/script_data/funciones/formatos.js',
+        '/script_data/funciones/peticiones_ajax.js',
+        '/script_data/funciones/storage.js',
+        '/script_data/funciones/utilidades.js',
+        '/script_data/prototipos/prototipos.js',
+        //'/script_data/index/registro.js',
+        //'/script_data/globales.js',
+        '/script_data/index.js',
+        '/script_data/jquery.js',
+        '/script_data/menu_eventos.js',
+        '/script_data/participantes.js',
+        //'/script_data/actualizar_registro_participantes.js',
+        '/script_data/offline.js',
         'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'
       ]);
     })
@@ -48,7 +48,7 @@ self.addEventListener('fetch', function(event) {
         });
         return response;
       }).catch(function () {
-        //return caches.match('/Biometrico/gallery/myLittleVader.jpg');
+       
       });
     }
   }));

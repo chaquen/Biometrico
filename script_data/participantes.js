@@ -26,12 +26,12 @@ function iniciar_evento_participantes(){
    
     console.log(globales._eventos[pos]);
 
-    /*consultarDatos("data/colombia.json",{},function(rs){
+    consultarDatos("data/colombia.json",{},function(rs){
         console.log(rs);
         globales._departamentos=rs;
         crear_data_list("txt_dep_nacimiento",rs,"id","departamento");
         
-    });*/
+    });
     //console.log(globales._URL);
     //console.log(globales._URL+"controlador/controlador_participantes.php");
     consultar_participantes()
@@ -95,7 +95,7 @@ function iniciar_evento_participantes(){
         dep=[];
         for(var el in globales._departamentos){
               
-                if(globales._departamentos[el].id== e.srcElement.value  ){
+                 if(globales._departamentos[el].id == e.srcElement.value.split("-")[0]  ){
                     
                     console.log(globales._departamentos[el].ciudades);
                     dep.push(globales._departamentos[el].ciudades);

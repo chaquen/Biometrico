@@ -29,8 +29,20 @@ function goOffline(e) {
         globales._URL=globales._URL_OFFLINE;
         console.log(globales);
         console.log(document.getElementById("btnInstalar"));
-        document.getElementById("btnInstalar").style.display="none";
-    	document.getElementById("btnPreparar").style.display="none";
-   		document.getElementById("btnOff").style.display="block";
+        if(document.getElementById("btnOff")!=null){
+            document.getElementById("btnOff").style.display="block";    
+        }
+        if(document.getElementById("btnInstalar")!=null){
+            document.getElementById("btnInstalar").style.display="none";
+        }
+
+        if(document.getElementById("btnPreparar")!=null){
+            document.getElementById("btnPreparar").style.display="none";
+        }
+
+        
+        
+    	
+   		
         
 }

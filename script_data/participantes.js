@@ -2,6 +2,12 @@ var dep;
 var pos;
 var id;
 function iniciar_evento_participantes(){
+
+
+    globales._usuario=obtener_local_storage("ssUsuario");
+    if(globales._usuario==false){
+        location.href="index.html";
+    }
     globales._URL=globales._URL_BE;
     document.getElementById("contenedorP").style.display="none";
     var d=recibirValorGet();
@@ -20,12 +26,12 @@ function iniciar_evento_participantes(){
    
     console.log(globales._eventos[pos]);
 
-    /*consultarDatos("data/colombia.json",{},function(rs){
+    consultarDatos("data/colombia.json",{},function(rs){
         console.log(rs);
         globales._departamentos=rs;
         crear_data_list("txt_dep_nacimiento",rs,"id","departamento");
         
-    });*/
+    });
     //console.log(globales._URL);
     //console.log(globales._URL+"controlador/controlador_participantes.php");
     consultar_participantes()
@@ -89,7 +95,7 @@ function iniciar_evento_participantes(){
         dep=[];
         for(var el in globales._departamentos){
               
-                if(globales._departamentos[el].id== e.srcElement.value  ){
+                 if(globales._departamentos[el].id == e.srcElement.value.split("-")[0]  ){
                     
                     console.log(globales._departamentos[el].ciudades);
                     dep.push(globales._departamentos[el].ciudades);
@@ -112,14 +118,22 @@ function iniciar_evento_participantes(){
                     mostrarMensaje("Este documento ya esta registrado");
                 }
         });
-    })
+    });
+    agregarEvento("btnGuardarAsistentes","click",function(){
+        consultarDatosOff(globales._URL_BE+"controlador/controlador_participantes.php","guardar_asistentes",{id_evento:pos},function(rs){
+                console.log(rs);
+                
+                mostrarMensaje(rs);
+        });
+    });
+    
 }
 agregarEventoLoad(iniciar_evento_participantes);
 
 function dibujar_registrados(datos){
     var div=document.getElementById("tblParticipantesRegistrados");
-    div.innerHTML="";
-    var tr=document.createElement("tr");
+    //div.innerHTML="";
+    /*var tr=document.createElement("tr");
     
     var th=document.createElement("th");
     th.className="mdl-data-table__cell--non-numeric";
@@ -141,7 +155,7 @@ function dibujar_registrados(datos){
     th.innerHTML="Segundo Apellido";
     tr.appendChild(th);
     
-    div.appendChild(tr);
+    div.appendChild(tr);*/
     for(var d in datos){
         var tr=document.createElement("tr");
         
@@ -181,11 +195,39 @@ function consultar_participantes(){
             id=d.id;
             document.getElementById("contenedorP").style.display='block';
         }
-
+        var div=document.getElementById("tblParticipantesRegistrados");
+        //div.innerHTML="";
+        var tr=document.createElement("tr");
+        
+        var th=document.createElement("th");
+        th.className="mdl-data-table__cell--non-numeric";
+        th.innerHTML="Primer Nombre";
+        tr.appendChild(th);
+        
+        var th=document.createElement("th");
+        th.className="mdl-data-table__cell--non-numeric";
+        th.innerHTML="Segundo Nombre";
+        tr.appendChild(th);
+        
+        var th=document.createElement("th");
+        th.className="mdl-data-table__cell--non-numeric";
+        th.innerHTML="Primer Apellido";
+        tr.appendChild(th);
+        
+        var th=document.createElement("th");
+        th.className="mdl-data-table__cell--non-numeric";
+        th.innerHTML="Segundo Apellido";
+        tr.appendChild(th);
+        
+        div.appendChild(tr);    
 
         if(rs.registrados.respuesta){
              //dibujar_registrados(eval(rs.registrados.valores_consultados));
              dibujar_registrados(rs.registrados.valores_consultados);
+        }
+
+        if(rs.verificados.respuesta){
+            dibujar_registrados(rs.verificados.valores_consultados);
         }
         
         

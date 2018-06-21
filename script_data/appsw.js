@@ -1,8 +1,9 @@
 // register service worker
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/Biometrico/sw.js', { scope: '/Biometrico/' }).then(function(reg) {
-
+  //navigator.serviceWorker.register('/Biometrico/sw.js', { scope: '/Biometrico/' }).then(function(reg) {
+    
+    navigator.serviceWorker.register('https://webbiometric.mohansoft.com/sw.js', { scope: '/Biometrico/' }).then(function(reg) {
     if(reg.installing) {
       console.log('Service worker installing');
     } else if(reg.waiting) {
@@ -15,6 +16,7 @@ if ('serviceWorker' in navigator) {
 
   }).catch(function(error) {
     // registration failed
+    console.log(error);
     console.log('Registration failed with ' + error);
   });
 }

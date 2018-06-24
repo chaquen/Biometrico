@@ -1,4 +1,4 @@
-agregarEventoLoad(iniciar_instalar);
+//agregarEventoLoad(iniciar_instalar);
 function iniciar_instalar(){
 	document.getElementById("btnAceptaIns").style.display="none";
 	agregarEvento("btnInstalar","click",function(){
